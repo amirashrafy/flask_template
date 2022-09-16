@@ -13,6 +13,8 @@ eh = ErrorHandling()
 api_v1_bp = Blueprint("api_v1", __name__, url_prefix="/api/v1")
 api_v1 = Api(api_v1_bp, doc=False) if not Config.SWAGGER_ENABLE else Api(api_v1_bp, doc="/doc")
 
+import sample.resource
+
 
 def create_app():
     app = Flask(__name__)
